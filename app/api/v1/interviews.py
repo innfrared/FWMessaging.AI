@@ -17,12 +17,18 @@ def generate(
     req: GenerateRequestSchema,
     uc: GenerateQuestionsUseCase = Depends(get_generate_use_case),
 ):
-    session_id, questions = uc.execute(
-        fastapi_session_id=req.fastapi_session_id,
-        profile_payload=req.profile.model_dump(mode="json"),
-        count=req.count,
-        existing_questions=req.existing_questions,
-    )
+    try:
+        session_id, questions = uc.execute(
+            fastapi_session_id=req.fastapi_session_id,
+            profile_payload=req.profile.model_dump(mode="json"),
+            count=req.count,
+            existing_questions=req.existing_questions,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except (LLMUpstreamError, LLMContractError) as e:
+        raise HTTPException(status_code=502, detail=str(e))
+    
     return GenerateResponseSchema(fastapi_session_id=session_id, questions=questions)
 
 

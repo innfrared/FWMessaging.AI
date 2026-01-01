@@ -47,28 +47,26 @@ def build_generate_prompt(profile: dict, count: int, existing: list[str]) -> str
     )
 
 def build_evaluate_prompt(context: dict, items: list[dict], include_summary: bool) -> str:
-    return (
+    base = (
         "You are an interview evaluator.\n"
-        "Return ONLY valid JSON. No markdown. No extra text.\n"
-        "\n"
-        "You MUST follow this response schema exactly:\n"
-        "{\n"
-        "  \"results\": [\n"
-        "    {\"order\": 1, \"score\": 0, \"feedback\": \"...\", \"meta\": {}},\n"
-        "    {\"order\": 2, \"score\": 0, \"feedback\": \"...\", \"meta\": {}}\n"
-        "  ],\n"
-        f"  \"overall\": {'{\"score\": 0, \"feedback\": \"...\", \"meta\": {}}' if include_summary else 'null'}\n"
-        "}\n"
-        "\n"
-        "Rules:\n"
-        "  - results must contain EXACTLY one entry for each input item.\n"
-        "  - Each result.order MUST match an input item.order.\n"
-        "  - Do NOT add extra orders. Do NOT omit any order.\n"
-        "  - score must be an integer from 0 to 10.\n"
-        "  - feedback must be a concise string with actionable notes.\n"
-        "  - meta must be a JSON object (dictionary). Never null.\n"
-        + ("  - overall MUST be a JSON object (not null) when include_summary=true.\n" if include_summary else "  - overall MUST be null when include_summary=false.\n")
-        "\n"
-        f"Context: {context}\n"
-        f"Items: {items}\n"
+        "Evaluate the following interview answers strictly.\n\n"
+        f"Context:\n{context}\n\n"
+        f"Items:\n{items}\n\n"
+        "For each item, return:\n"
+        "- order (int)\n"
+        "- score (0-10)\n"
+        "- feedback (string)\n"
+        "- meta (object)\n\n"
     )
+
+    if include_summary:
+        base += (
+            "Also return an overall summary with:\n"
+            "- score (0-10)\n"
+            "- feedback (string)\n"
+            "- meta (object)\n\n"
+        )
+
+    base += "Return STRICT JSON matching the schema exactly."
+
+    return base
