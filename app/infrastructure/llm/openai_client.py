@@ -1,56 +1,51 @@
-from typing import Any
+from __future__ import annotations
 
-from app.application.ports.llm import LLMPort
-from app.domain.entities.profile import Profile
-from app.domain.entities.qa import QAItem
-from app.domain.entities.evaluation import QuestionEvaluation, OverallEvaluation
+from openai import OpenAI
+
+from app.application.exceptions import LLMUpstreamError
 
 
-class MockLLM(LLMPort):
-    def generate_questions(self, profile: Profile, count: int, existing_questions: list[str], session_id: str) -> list[str]:
-        mode_prefix = {
-            "conversation": "Discuss",
-            "drilldown": "Deep dive into",
-            "case": "Scenario:",
-            "challenge": "Challenge:",
-            "retrospective": "Reflect on",
-        }.get(profile.mode, "Discuss")
-        
-        base = [
-            f"{mode_prefix} a core concept in {skill} for {profile.role}."
-            for skill in list(profile.stack)[:count]
-        ]
-        if len(base) < count:
-            base += [f"{mode_prefix} system design question #{i+1} for {profile.role}." for i in range(count - len(base))]
-        existing_set = set(q.strip().lower() for q in existing_questions if q and q.strip())
-        out = [q for q in base if q.strip().lower() not in existing_set]
-        return out[:count]
+class OpenAIClient:
+    def __init__(self, api_key: str) -> None:
+        self._client = OpenAI(api_key=api_key)
 
-    def evaluate_interview(
+    def chat_text(
         self,
-        items: list[QAItem],
-        context: dict[str, Any],
-        include_summary: bool,
-        session_id: str,
-    ) -> tuple[dict[int, QuestionEvaluation], OverallEvaluation | None]:
-        results: dict[int, QuestionEvaluation] = {}
-        for it in items:
-            score = 7 if len(it.answer) > 20 else 5
-            results[it.order] = QuestionEvaluation(
-                order=it.order,
-                score=score,
-                feedback=f"Mock feedback for Q{it.order}.",
-                meta={"len": len(it.answer)},
+        model: str,
+        messages: list[dict[str, str]],
+        temperature: float,
+        max_tokens: int,
+    ) -> str:
+        try:
+            resp = self._client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
             )
+        except Exception as exc:
+            raise LLMUpstreamError(f"OpenAI API error: {exc}") from exc
 
-        overall = None
-        if include_summary:
-            avg = round(sum(r.score for r in results.values()) / max(1, len(results)))
-            overall = OverallEvaluation(
-                score=avg,
-                feedback="Mock overall feedback.",
-                meta={"strengths": ["Communication"], "gaps": ["Depth"]},
+        content = (resp.choices[0].message.content or "").strip() if resp.choices else ""
+        return content
+
+    def chat_json(
+        self,
+        model: str,
+        messages: list[dict[str, str]],
+        temperature: float,
+        max_tokens: int,
+    ) -> str:
+        try:
+            resp = self._client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                response_format={"type": "json_object"},
             )
+        except Exception as exc:
+            raise LLMUpstreamError(f"OpenAI API error: {exc}") from exc
 
-        return results, overall
-
+        content = (resp.choices[0].message.content or "").strip() if resp.choices else ""
+        return content

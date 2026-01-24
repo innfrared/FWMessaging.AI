@@ -1,58 +1,36 @@
-# ICAI Interview Engine
+# Meta DM Auto Reply
 
-FastAPI service that powers interview question generation and answer evaluation for ICAI.
+FastAPI service that automatically handles Meta DMs for business accounts using ports/adapters pattern. Classifies messages by intent, generates replies from a structured knowledge base, maintains conversation context, and hands off to humans when needed. Supports English and Spanish.
 
-This service is consumed by the Django backend over HTTP and does not store data.
+**Features:** intent-based replies (pricing, booking, availability), webhook signature verification, duplicate protection, conversation state, booking integration.
 
-## What it does
+**Stack:** FastAPI, OpenAI API, Pydantic, httpx, Uvicorn
 
-- Generates interview questions from a candidate profile
-- Evaluates interview answers and returns structured feedback
-- Supports multiple interview modes (conversation, drilldown, case, etc.)
-- Enforces strict request/response contracts
+## Setup
 
-## Tech
-
-- Python
-- FastAPI
-- Pydantic
-- OpenAI API
-
-## Run locally
+Requires Python 3.11+, OpenAI API key, and Meta app credentials.
 
 ```bash
+git clone <repository-url> && cd FW.AI
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8001
 ```
 
-API docs available at:
+## Endpoints
 
-- `/docs`
+`GET /webhooks/instagram` verification | 
+`POST /webhooks/instagram` messages | 
+`GET /health` health check
 
-## Configuration
+## Project Structure
 
-Environment variables:
-
-- `OPENAI_API_KEY=...`
-- `OPENAI_MODEL_GENERATE=...`
-- `OPENAI_MODEL_EVALUATE=...`
-
-If no API key is provided, a mock LLM is used.
-
-## API
-
-Base path:
-
-- `/api/v1/interviews`
-
-Endpoints:
-
-- `POST /generate` — generate interview questions
-- `POST /evaluate` — evaluate answers and return feedback
-
-## Notes
-
-- Stateless service
-- No database
-- Session IDs are passed through for context only
-- Designed to be replaceable or scaled independently
-
+```
+app/
+ /api/
+ /application/
+ /domain/
+ /infrastructure/
+ /core/
+ /wiring/
+```

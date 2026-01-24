@@ -4,6 +4,5 @@ class LLMUpstreamError(RuntimeError):
 
 
 class LLMContractError(RuntimeError):
-    """Raised when LLM adapter violates contract (bad format, wrong orders, missing data)."""
+    """Raised when LLM adapter violates contract (bad format or missing data)."""
     pass
-

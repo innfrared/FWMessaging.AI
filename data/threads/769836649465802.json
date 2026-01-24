@@ -1,0 +1,267 @@
+{
+  "thread_id": "769836649465802",
+  "state": {
+    "last_intent": "booking",
+    "awaiting_booking": false,
+    "last_service": "laser_hair_removal_full_body",
+    "booking_state": {
+      "status": "confirmed",
+      "service_key": "laser_hair_removal_full_body",
+      "calendar_event_id": "mock_event_1",
+      "event_id": "mock_event_1",
+      "timezone": null,
+      "duration_minutes": null,
+      "updated_at": null,
+      "proposed_date_iso": "2026-01-23",
+      "proposed_time_24h": "09:00",
+      "proposed_slot_start_iso": "2026-01-23T09:00:00-08:00",
+      "proposed_date": "2026-01-23T00:00:00-08:00",
+      "proposed_time": "2026-01-23T09:00:00-08:00"
+    },
+    "language": "en",
+    "last_seen_at": 1768868129.659213,
+    "last_outbound_at": 1768868068.267685,
+    "greeted_at": 1768868064.823969,
+    "selection_state": {
+      "status": "none",
+      "pending_category": null,
+      "selected_service_key": null,
+      "last_service_mention": null,
+      "updated_at": null
+    }
+  },
+  "messages": [
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768866826.087427,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTgzMTg2NDIxODkxMDU5MzU1MzA3MTUwMzA0ODcwNAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768866932.554006,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTgzNTQzMTA1Mzk1MTI3MTA4MjUxMzI4ODY1ODk0NAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768866973.451579,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTgzNjMyODE1NTE2MDUxMzQ5ODAzNjgzODU5NjYwOAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867120.941599,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTgzODc0MTUzMjk2NjI0Mjc5MTgyOTgyNjE3NDk3NgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867231.740783,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0MTEwNDk4NzcwMjg0OTM2Mjg4MzQ0MTA2NTk4NAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867347.366096,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0MzIzNTc4NTU3MzA1MDkwNjk3ODg5MzY5MjkyOAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867438.392017,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0NDkwOTQzMzQwOTI2NTkzNzY4ODYzNzIxMDYyNAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867505.096069,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0NjE0MTc1ODk3OTA3ODI5OTY1MDY5NjkzNzQ3MgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867560.697511,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0Njk3MjUwMDk3Nzk5NDU5Njg1NTgzNjU3MzY5NgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867615.124186,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg0ODE3NTc5OTc0NzQ1Njc0OTQ0Nzc4OTE1MDIwOAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867849.871561,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1MjUwMTYyMDEzMzE5NTQ2NjY1NjMzOTQ2MDA5NgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768867938.857273,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NDE0NTAzMDM2MTY3Mjc3Nzg0ODQyNjg1NjQ0OAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Hi, do you do laser?",
+      "ts": 1768868032.791132,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NTg4MTQwMzI3MDUwNDE5NzU3ODk0NTQ2MjI3MgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "🌸LIMITED TIME PROMO\n\nFull Body Diode Laser Hair Removal\n• Full Body – only $150 per session\n• Add Full Face – 50% OFF – $50\n\n✨Safe & effective for all skin types\n✨Long-term hair reduction\n✨Minimal discomfort\n\n🌸SPECIAL BONUS:\n\nIf you complete all 6 sessions consecutively you will keep the promo price.\n\nPlease let us know if you have any questions regarding the treatment or if you would like to schedule an appointment.",
+      "ts": 1768868039.349288,
+      "meta": {}
+    },
+    {
+      "role": "user",
+      "text": "Ok I would like to book",
+      "ts": 1768868064.826056,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NjQ2NTQwMDY5ODM1MzM1MjEzNjE5MTkwMTY5NgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "What date works for you?",
+      "ts": 1768868068.266882,
+      "meta": {}
+    },
+    {
+      "role": "system",
+      "text": "HANDOFF: booking_request",
+      "ts": 1768868068.269083,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NjQ2NTQwMDY5ODM1MzM1MjEzNjE5MTkwMTY5NgZDZD"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Lets do next Friday",
+      "ts": 1768868083.533243,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NjgxNzA1OTE3MDk4NDg0NjA0NTY4ODYyNzIwMAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "I have availability at: 09:00 AM or 09:30 AM. Which works better for you?",
+      "ts": 1768868084.992666,
+      "meta": {}
+    },
+    {
+      "role": "user",
+      "text": "9AM works perfect",
+      "ts": 1768868101.355928,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NzE0NzAzOTcxMjUxMDQ0NzIxNzM3OTYzOTI5NgZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "Would you like me to book laser_hair_removal_full_body on January 23 at 09:00 AM?",
+      "ts": 1768868102.688148,
+      "meta": {}
+    },
+    {
+      "role": "user",
+      "text": "yes",
+      "ts": 1768868129.660725,
+      "meta": {
+        "message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NzY2NzU4NzYyNzIwOTk1MDAzMjMzOTkyNzA0MAZDZD",
+        "sender_id": "769836649465802",
+        "platform": "instagram"
+      }
+    },
+    {
+      "role": "assistant",
+      "text": "Perfect! I've booked your appointment for January 23 at 09:00 AM. We look forward to seeing you.",
+      "ts": 1768868131.02596,
+      "meta": {}
+    }
+  ],
+  "processed_message_ids": [
+    "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"
+  ],
+  "debounce": {
+    "last_message_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDY1MTQyODQ5ODQyOjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI3NjEwNzY0Mjk1MzI1ODQwNTozMjYyOTg1NzY2NzU4NzYyNzIwOTk1MDAzMjMzOTkyNzA0MAZDZD",
+    "last_received_at": 1768868129.659213
+  },
+  "version": 1
+}
